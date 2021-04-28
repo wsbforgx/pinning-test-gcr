@@ -2,6 +2,8 @@ FROM clojure:lein AS builder
 
 ARG MVN_ARTIFACTORYMAVENREPOSITORY_USER
 ARG MVN_ARTIFACTORYMAVENREPOSITORY_PWD
+ARG SOURCE
+ARG REVISION
 
 RUN mkdir /build
 
@@ -15,6 +17,9 @@ RUN lein metajar
 FROM gcr.io/personalsdm-216019/java-atomist:0.13.0-20191119164121
 
 MAINTAINER Jim Clark <jim@atomist.com>
+
+LABEL org.opencontainers.image.revision=$REVISION
+LABEL org.opencontainers.image.source=$SOURCE
 
 RUN mkdir -p /usr/src/app \
     && mkdir -p /usr/src/app/bin \
