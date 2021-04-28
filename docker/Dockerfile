@@ -2,8 +2,6 @@ FROM clojure:lein AS builder
 
 ARG MVN_ARTIFACTORYMAVENREPOSITORY_USER
 ARG MVN_ARTIFACTORYMAVENREPOSITORY_PWD
-ARG SOURCE
-ARG REVISION
 
 RUN mkdir /build
 
@@ -18,6 +16,8 @@ FROM gcr.io/personalsdm-216019/java-atomist:0.13.0-20191119164121
 
 MAINTAINER Jim Clark <jim@atomist.com>
 
+ARG SOURCE
+ARG REVISION
 LABEL org.opencontainers.image.revision=$REVISION
 LABEL org.opencontainers.image.source=$SOURCE
 
