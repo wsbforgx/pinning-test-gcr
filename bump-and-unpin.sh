@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 
 atm-bb gh --slenderslack close-prs --slug slenderslack/pinning-test-gcr
 bump_version.clj src/atomist/main.clj
