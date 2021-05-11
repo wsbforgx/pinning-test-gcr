@@ -6,3 +6,4 @@ unpin.clj docker/Dockerfile
 git commit -am 'bump'
 git push origin main
 
+./build-docker.sh
