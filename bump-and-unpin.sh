@@ -1,8 +1,7 @@
 #!/bin/bash -i
 
-atm-bb gh --slenderslack close-prs --slug slenderslack/pinning-test-gcr
-bump_version.clj src/atomist/main.clj
-unpin.clj docker/Dockerfile
+atm-bb bump-version src/atomist/main.clj
+atm-bb unpin docker/Dockerfile
 git commit -am 'bump'
 git push origin main
 
