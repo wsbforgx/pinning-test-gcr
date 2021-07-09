@@ -3,7 +3,7 @@ RUN apk add --no-cache mysql-client
 
 WORKDIR usr/src/app
 RUN top
-LABEL superfluous="this should not be here"
+LABEL superfluous="this should not be here2"
 MAINTAINER Bibby Bob Elsa <bibby@bobelsa.com>
 
 ENTRYPOINT ["mysql"]
